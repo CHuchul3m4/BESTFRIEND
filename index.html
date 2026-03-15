@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+
+<body>
+
+<h2>Ingresa la contraseña</h2>
+
+<input id="pass" type="password" placeholder="contraseña">
+<button onclick="check()">Entrar</button>
+
+<p id="error" style="color:red;display:none;">Contraseña incorrecta</p>
+
 <script>
 
 function check(){
@@ -19,3 +35,45 @@ document.getElementById("error").style.display = "block";
 }
 
 </script>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+</head>
+
+<body>
+
+<h2>Ingresa la contraseña</h2>
+
+<input id="pass" type="password" placeholder="contraseña">
+<button onclick="check()">Entrar</button>
+
+<p id="error" style="color:red;display:none;">Contraseña incorrecta</p>
+
+<script>
+
+function check(){
+
+let correcta = "password"; // cambia aquí tu contraseña
+let escrita = document.getElementById("pass").value;
+
+if(escrita === correcta){
+
+localStorage.setItem("auth","ok");
+window.location.href = "page.html";
+
+}else{
+
+document.getElementById("error").style.display = "block";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
