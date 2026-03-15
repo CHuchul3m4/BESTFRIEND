@@ -1,79 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Login</title>
+  <meta charset="UTF-8">
+  <title>Login</title>
 </head>
-
 <body>
+  <h2>Ingresa la contraseña</h2>
+  <input id="pass" type="password" placeholder="contraseña">
+  <button onclick="check()">Entrar</button>
+  <p id="error" style="color:red; display:none;">Contraseña incorrecta</p>
 
-<h2>Ingresa la contraseña</h2>
+  <script>
+    function check() {
+      const correcta = "password"; // cambia aquí tu contraseña
+      const escrita = document.getElementById("pass").value;
 
-<input id="pass" type="password" placeholder="contraseña">
-<button onclick="check()">Entrar</button>
-
-<p id="error" style="color:red;display:none;">Contraseña incorrecta</p>
-
-<script>
-
-function check(){
-
-let correcta = "password";
-let escrita = document.getElementById("pass").value.trim();
-
-if(escrita === correcta){
-
-localStorage.setItem("auth","ok");
-window.location.href = "page.html";
-
-}else{
-
-document.getElementById("error").style.display = "block";
-
-}
-
-}
-
-</script>
-
-</body>
-</html><!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Login</title>
-</head>
-
-<body>
-
-<h2>Ingresa la contraseña</h2>
-
-<input id="pass" type="password" placeholder="contraseña">
-<button onclick="check()">Entrar</button>
-
-<p id="error" style="color:red;display:none;">Contraseña incorrecta</p>
-
-<script>
-
-function check(){
-
-let correcta = "password"; // cambia aquí tu contraseña
-let escrita = document.getElementById("pass").value;
-
-if(escrita === correcta){
-
-localStorage.setItem("auth","ok");
-window.location.href = "page.html";
-
-}else{
-
-document.getElementById("error").style.display = "block";
-
-}
-
-}
-
-</script>
-
+      if (escrita === correcta) {
+        localStorage.setItem("auth", "ok");
+        window.location.href = "page.html"; // redirige si es correcta
+      } else {
+        const errorMsg = document.getElementById("error");
+        errorMsg.style.display = "block"; // muestra mensaje de error
+      }
+    }
+  </script>
 </body>
 </html>
