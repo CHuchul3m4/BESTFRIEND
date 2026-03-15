@@ -1,28 +1,103 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
+
+<meta charset="UTF-8">
+<title>PASSWORD</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#111;
+color:white;
+}
+
+/* pantalla de login */
+
+.login{
+position:fixed;
+width:100%;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:#111;
+z-index:10;
+}
+
+input{
+padding:12px;
+font-size:16px;
+border-radius:6px;
+border:none;
+margin-top:10px;
+}
+
+/* link oculto */
+
+.link{
+display:none;
+margin-top:20px;
+padding:10px 20px;
+background:lime;
+color:black;
+text-decoration:none;
+border-radius:6px;
+}
+
+/* cuando la contraseña es correcta */
+
+input:valid ~ .link{
+display:inline-block;
+}
+
+input:valid ~ .site{
+display:block;
+}
+
+input:valid{
+border:2px solid lime;
+}
+
+.site{
+display:none;
+padding:40px;
+text-align:center;
+}
+
+</style>
+
 </head>
+
 <body>
-  <h2>Ingresa la contraseña</h2>
-  <input id="pass" type="password" placeholder="contraseña">
-  <button onclick="check()">Entrar</button>
-  <p id="error" style="color:red; display:none;">Contraseña incorrecta</p>
 
-  <script>
-    function check() {
-      const correcta = "password"; // cambia aquí tu contraseña
-      const escrita = document.getElementById("pass").value;
+<div class="login">
 
-      if (escrita === correcta) {
-        localStorage.setItem("auth", "ok");
-        window.location.href = "page.html"; // redirige si es correcta
-      } else {
-        const errorMsg = document.getElementById("error");
-        errorMsg.style.display = "block"; // muestra mensaje de error
-      }
-    }
-  </script>
+<h2>Ingresa la contraseña</h2>
+
+<input type="password" placeholder="contraseña" pattern="password">
+
+<!-- AQUI PONES EL LINK -->
+<a class="link" href="./page.html">Entrar</a>
+
+<div class="site">
+
+<h1>Pista- es un tipo de cifrado</h1>
+
+<p>
+TEWWASVH
+</p>
+
+<p>
+Espero que te guste ❤️
+</p>
+
+</div>
+
+</div>
+
 </body>
 </html>
